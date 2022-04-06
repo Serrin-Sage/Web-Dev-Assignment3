@@ -1,13 +1,13 @@
-import UserForm from './Components/UserForm';
+import Welcome from './Components/WelcomePage';
 import ChangeUser from './Components/ChangeUser';
 import './App.css';
-import Clock from './Components/Clock';
+// import Clock from './Components/Clock';
 
 function App() {
   return (
     <div className="App">
-      <UserForm />
-      <Clock />
+      <Welcome />
+     
     </div>
   );
 }
