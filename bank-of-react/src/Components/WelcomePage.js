@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import {Link} from 'react-router-dom';
+import React, { Component, useState } from "react";
+import {Link, Navigate, Router, Route } from 'react-router-dom';
+
 
 class Welcome extends Component {
     constructor () {
@@ -21,13 +22,23 @@ class Welcome extends Component {
     }
 
     handleSubmit = (e) => {
+        const [message, setMessages] = useState("");
         e.preventDefault();
-        this.props.LogIn(this.state.user);
         this.setState({redirect: true})
+        const formValid = this.state.user.length > 0;
+        if (!formValid) {
+            setMessages('Enter a valid name')
+            return;
+        }
+        setMessages(`Hello, ${this.state.user}, welcome to the Bank of React!`);
     }
 
     render () {
-
+        if (this.state.redirect) {
+            return(<Router>
+                    <Navigate to="/userprofile" />
+                    </Router>)
+        }
         return (
             <div className="welcome-page">
                 <div className="welcome-container">
@@ -35,11 +46,16 @@ class Welcome extends Component {
                     <h2 className="enter-name"> Enter Your Name </h2>
                     <form onSubmit={this.handleSubmit} >
                     <div>
-                        <input 
+                        <input
+                            type="text"
+                            name="userName"
                             className="name-input"
                             placeholder="Enter..."
+                            onChange={this.handleChange}
+                            value={this.state.user.userName}
                         />
                     </div>
+                    <button>Log In</button>
                 </form>
             </div>
             </div>

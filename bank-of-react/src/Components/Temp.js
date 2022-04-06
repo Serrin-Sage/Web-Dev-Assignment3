@@ -26,7 +26,7 @@ function UserForm() {
             <div className="welcome-container">
                 <h1 className="welcome-title">Welcome To The Bank of React!</h1>
                 <h2 className="enter-name"> Enter Your Name </h2>
-                <form onSubmit={submitName} action={"https://www.reddit.com/"}>
+                <form onSubmit={submitName} >
                     <div>
                         <input 
                             className="name-input"
