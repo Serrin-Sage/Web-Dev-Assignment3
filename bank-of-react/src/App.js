@@ -1,16 +1,20 @@
-import Welcome from './Components/WelcomePage';
-import ChangeUser from './Components/ChangeUser';
-import Temp from './Components/Temp'
-import Profile from './Components/Profile';
-import Debits from './Components/Debits';
+
+import UserProfile from './Components/UserProfile'
 import './App.css';
+
 // import Clock from './Components/Clock';
 
 function App() {
+  const LogIn = (LoginInfo) => {
+    const newUser = {...this.state.currentUser}
+    newUser.userName = LoginInfo.userName
+    this.setState({currentUser: newUser})
+  }
+
   return (
     <div className="App">
-      <Temp />
-    </div>
+      <UserProfile />
+    </div>   
   );
 }
 
