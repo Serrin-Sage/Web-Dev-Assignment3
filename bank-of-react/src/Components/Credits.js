@@ -7,7 +7,7 @@ const Credits = (props) => {
       });
     }
     return (
-    	<div>
+    	<div className="content-container">
     	   <h1>Credits</h1>
     	   {creditsView()}
     	</div>

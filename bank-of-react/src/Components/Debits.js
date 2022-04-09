@@ -1,15 +1,20 @@
 const Debits = (props) => {
-    let debitsView = () => {
-      const {debits} = props;
-      return debits.map((debit) => {
-        let date = debit.date.slice(0,10);
-        return <li key={debit.id}>{debit.amount} {debit.description} {date} </li>
-      });
-    }
+    
+  let debitsDisplay = () => {
+    const {debits} = props;
+    return debits.map((debit) => {
+      let date = debit.date.slice(0,10);
+      return (
+      <div className="debit-container">
+        <li key={debit.id}>{debit.amount} {debit.description} {date} </li>
+      </div>
+      )
+    });
+  }
     return (
-    	<div>
-    	   <h1>Debits</h1>
-    	   {debitsView()}
+    	<div className="content-container">
+    	   <h1 className="debit-title">Debits</h1>
+    	   {debitsDisplay()}
     	</div>
 
     )

@@ -40,3 +40,49 @@
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
+
+/******** USER PAGE ********/
+.user-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clock {
+    font-size: 40px;
+    background-color: antiquewhite;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.link-to-pages {
+    display: flex;
+    
+}
+
+.links {
+    padding: 1rem;
+    text-decoration: none;
+}
+/******** CHANGE USER ********/
+.user-name-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.update-button {
+    padding: 0.5rem;
+}
+
+/******** DEBIT PAGE ********/
+.content-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.debit-container {
+    display: grid;
+    
+}
