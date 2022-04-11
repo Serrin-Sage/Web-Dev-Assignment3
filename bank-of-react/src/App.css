@@ -1,6 +1,8 @@
 .App {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    
 }
 
 .welcome-page {
@@ -68,55 +70,126 @@
 }
 
 .links {
-    padding: 1rem;
+    padding: 0.5rem;
+    margin: 1rem;
     text-decoration: none;
+    color: black;
+    border: solid black;
+    border-radius: 8px;
+    background-color: aliceblue;
 }
-/******** CHANGE USER ********/
+.links:hover {
+    background-color: black;
+    color: white;
+}
+
+
+/******** DEBIT PAGE ********/
+.debit-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.debit-container {
+    padding: 1rem;
+    border: solid rgb(0, 0, 0);
+    background-color: rgb(220, 255, 255);
+    border-radius: 8px;
+    margin: 1rem;
+}
+.debit-item {
+    text-align: center;
+}
+
+/******** CREDIT PAGE ********/
+.credit-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.credit-container {
+    padding: 1rem;
+    border: solid rgb(0, 0, 0);
+    background-color: rgb(220, 255, 255);
+    border-radius: 8px;
+    margin: 1rem;
+}
+.credit-item {
+    text-align: center;
+}
+
+/********** SETTINGS FORM ********/
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .user-name-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    background-color: rgb(111, 126, 255);
+    padding: 1rem;
+    border-radius: 20px;
+    height: 300px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    justify-content: space-around;
 }
 
-.update-button {
-    padding: 0.5rem;
-}
-
-/******** DEBIT PAGE ********/
-.content-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.debit-container {
-    display: grid;
-    
-}
-
-/********** SETTINGS FORM ********/
 .settings-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.edit-settings{
+.input-field {
     display: flex;
-    align-items: center;
-    width: 200px;
-    height: 200px;
-    background-color: red;
-}
-
-.edit-settings-container {
-    display: flex;
-    align-items: center;
     flex-direction: column;
-
 }
 
-.cancel-button {
-    width: 50px;
+label {
+    padding: 0.3rem;
+}
+
+.update-button {
+    width: 100px;
+    transform: translateY(20px);
+    border-style: none;
+    border-radius: 20px;
+    padding: 1rem;
+    background-color: antiquewhite;
+}
+.update-button:hover {
+    cursor: pointer;
+}
+
+.edit-button {
+    width: 150px;
+    transform: translateY(50px);
+    border-style: none;
+    border: solid 0.5px black;
+    border-radius: 20px;
+    padding: 1rem;
+    background-color: antiquewhite;
+}
+.edit-button:hover {
+    cursor: pointer;
+}
+button {
+   
 }

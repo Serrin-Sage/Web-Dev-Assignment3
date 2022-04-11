@@ -6,15 +6,21 @@ const Debits = (props) => {
       let date = debit.date.slice(0,10);
       return (
       <div className="debit-container">
-        <li key={debit.id}>{debit.amount} {debit.description} {date} </li>
+        <div key = {debit.id} className="debit-item">
+                    <h3>{debit.description}</h3>
+                    <p>${debit.amount}</p>
+                    <p>Date: {date} </p>
+                </div>
       </div>
       )
     });
   }
     return (
-    	<div className="content-container">
+    	<div className="debit-page">
     	   <h1 className="debit-title">Debits</h1>
-    	   {debitsDisplay()}
+         <div className="content-container">
+            {debitsDisplay()}
+         </div>
     	</div>
 
     )

@@ -33,6 +33,9 @@ class Settings extends Component {
     console.log(e)
     e.preventDefault()
     this.props.changeUsername(this.state.user)
+    document.body.style.backgroundColor = document.getElementById('bg-color').value;
+    document.body.style.color = document.getElementById('text-color').value;
+    this.cancel()
   }
   
   render () {
@@ -41,11 +44,20 @@ class Settings extends Component {
       <div className='form-container'>
         <form onSubmit={this.handleSubmit}>
           <div className='user-name-form'>
-            <label>Change Username: </label>
-            <input type="text" name="userName" onChange={this.handleChange} value={this.state.user.userName}/>
-            <ColorSwitcher />
+            <div className='input-field'>
+              <label>Change Username: </label>
+              <input type="text" name="userName" onChange={this.handleChange} value={this.state.user.userName}/>
+            </div>
+            <div  className='input-field'>
+              <label>Change background color:</label>
+              <input type="text" id='bg-color' />
+            </div>
+            <div  className='input-field'>
+              <label>Change text color:</label>
+              <input type="text" id='text-color' />
+            </div>    
+            {/* <ColorSwitcher /> */}
             <button className='update-button'>UPDATE</button>
-            
           </div>  
         </form>
       </div>
@@ -53,7 +65,7 @@ class Settings extends Component {
     } else {
       return (
         <div className="settings-container">
-            <button id="edit-button" onClick={this.edit}>Customize Profile</button>
+            <button className="edit-button" onClick={this.edit}>Customize Profile</button>
         </div>
       );
     }

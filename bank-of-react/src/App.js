@@ -14,7 +14,7 @@ class App extends Component {
   super(props);
   this.state = {
     currentUser: {
-      userName: 'Guest'
+      userName: 'Guest',
     },
     debits: [],
     credits: [],
@@ -42,21 +42,19 @@ changeUsername = (logInInfo) => {
 render() {
   const { debits } = this.state;
   const { credits } = this.state;
-  const DebitComponent = () => (<Debits debits={debits} />);
-  const CreditComponent = () => (<Credits credits={credits} />);
-  const LoginComponent = () => (<Settings user={this.currentUser} changeUsername={this.changeUsername} />)
-  
+
   return (
     <Router>
     <div className="App">
       <UserProfile userName={this.state.currentUser.userName}/>
       
-    </div>
+    
       <Routes>
-        <Route exact path='/settings' element={<LoginComponent />} />
-        <Route exact path='/debitpage' element={<DebitComponent />} />
-        <Route exact path='/creditpage' element={<CreditComponent />} />
+        <Route exact path='/settings' element={<Settings user={this.currentUser} changeUsername={this.changeUsername} />} />
+        <Route exact path='/debitpage' element={<Debits debits={debits} />} />
+        <Route exact path='/creditpage' element={<Credits credits={credits} />} />
       </Routes>
+      </div>
     </Router>   
   );
 }
