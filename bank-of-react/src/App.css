@@ -1,3 +1,8 @@
+.App {
+    display: flex;
+    justify-content: center;
+}
+
 .welcome-page {
     margin: 0px;
     display: flex;
@@ -18,9 +23,10 @@
 }
 
 .welcome-title {
-    font-size: 70px;
+    font-size: 20px;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
+    padding: 0rem;
 }
 
 .enter-name {
@@ -46,6 +52,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .clock {
@@ -69,6 +76,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .update-button {
@@ -85,4 +93,30 @@
 .debit-container {
     display: grid;
     
+}
+
+/********** SETTINGS FORM ********/
+.settings-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-settings{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+
+.edit-settings-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.cancel-button {
+    width: 50px;
 }

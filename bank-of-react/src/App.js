@@ -3,18 +3,18 @@ import { Component } from 'react'
 import UserProfile from './Components/UserProfile';
 import Debits from './Components/Debits';
 import Credits from './Components/Credits';
-import Welcome from './Components/ChangeUser';
+import Settings from './Components/Settings';
 import axios from 'axios';
 import './App.css';
+import './themes.scss';
 
-// import Clock from './Components/Clock';
 
 class App extends Component { 
   constructor(props) {
   super(props);
   this.state = {
     currentUser: {
-      userName: ''
+      userName: 'Guest'
     },
     debits: [],
     credits: [],
@@ -38,13 +38,14 @@ changeUsername = (logInInfo) => {
   this.setState({currentUser: newUser})
 }
 
+
 render() {
   const { debits } = this.state;
   const { credits } = this.state;
   const DebitComponent = () => (<Debits debits={debits} />);
   const CreditComponent = () => (<Credits credits={credits} />);
-  const LoginComponent = () => (<Welcome user={this.currentUser} changeUsername={this.changeUsername} />)
-
+  const LoginComponent = () => (<Settings user={this.currentUser} changeUsername={this.changeUsername} />)
+  
   return (
     <Router>
     <div className="App">

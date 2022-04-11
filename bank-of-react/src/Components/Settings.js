@@ -1,17 +1,26 @@
 import React, {Component} from 'react';
-import {Navigate} from 'react-router-dom';
+import ColorSwitcher from './ColorSelector';
 
-
-class ChangeUser extends Component {
+class Settings extends Component {
   constructor () {
     super();
     this.state = {
       user: {
         userName: '',
+        showSettings: false,
       },
       navigate: false
     }
   }
+
+  edit = () => {
+    this.setState({showSettings: true})
+  }
+
+  cancel = () => {
+    this.setState({showSettings: false})
+  }
+
   handleChange = (e) => {
     const updatedUser = {...this.state.user}
     const inputField = e.target.name
@@ -24,25 +33,30 @@ class ChangeUser extends Component {
     console.log(e)
     e.preventDefault()
     this.props.changeUsername(this.state.user)
-    this.setState({navigate: true})
   }
   
   render () {
-    if (this.state.navigate) {
-      return (<Navigate to="/userpage"/>)
-    }
+    if (this.state.showSettings) {
     return (
       <div className='form-container'>
         <form onSubmit={this.handleSubmit}>
           <div className='user-name-form'>
             <label>Change Username: </label>
             <input type="text" name="userName" onChange={this.handleChange} value={this.state.user.userName}/>
+            <ColorSwitcher />
             <button className='update-button'>UPDATE</button>
-          </div>
-          
+            
+          </div>  
         </form>
       </div>
     );
+    } else {
+      return (
+        <div className="settings-container">
+            <button id="edit-button" onClick={this.edit}>Customize Profile</button>
+        </div>
+      );
+    }
   }
 }
-export default ChangeUser;
+export default Settings;
